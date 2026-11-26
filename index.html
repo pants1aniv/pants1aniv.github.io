@@ -1,0 +1,1012 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>午夜传媒有限公司_午夜档影视制作与发行_深夜剧集与网络电影</title>
+<meta name="description" content="午夜传媒有限公司专注深夜档影视内容制作与发行，提供午夜剧集库、网络电影片单、幕后制作档案、播出排期与观众评论，适合喜欢深夜题材的观众与从业者查阅。">
+<meta name="keywords" content="午夜档剧集,深夜悬疑剧,网络电影片单,影视制作档案,播出排期">
+<style>
+:root{
+  --ink:#0d1020;
+  --ink-2:#1a1f38;
+  --panel:#151a30;
+  --panel-2:#1d2440;
+  --line:#2b3355;
+  --text:#e8ecf8;
+  --text-2:#a9b2cf;
+  --text-3:#7c86a8;
+  --brand:#6d5cff;
+  --brand-2:#a855f7;
+  --accent:#ffb547;
+  --accent-2:#39d0c8;
+  --danger:#ff5f7a;
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 12px 32px rgba(0,0,0,.35);
+  --max:1340px;
+  --announce-h:38px;
+  --header-h:64px;
+  --stick:calc(var(--announce-h) + var(--header-h));
+  --font:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font);
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(109,92,255,.18), transparent 60%),
+    radial-gradient(900px 500px at 0% 10%, rgba(57,208,200,.10), transparent 55%),
+    var(--ink);
+  color:var(--text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0;line-height:1.3;font-weight:700}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* 吸顶公告条 */
+.announce{
+  position:sticky;top:0;z-index:60;
+  height:var(--announce-h);
+  display:flex;align-items:center;
+  background:linear-gradient(90deg,rgba(109,92,255,.95),rgba(168,85,247,.9));
+  color:#fff;font-size:13px;
+}
+.announce .inner{
+  max-width:var(--max);margin:0 auto;padding:0 20px;width:100%;
+  display:flex;align-items:center;gap:12px;overflow:hidden;white-space:nowrap;
+}
+.announce .dot{width:7px;height:7px;border-radius:50%;background:#ffe07a;flex:none;box-shadow:0 0 0 3px rgba(255,224,122,.3)}
+.announce strong{font-weight:700}
+.announce .more{margin-left:auto;font-size:12px;opacity:.9;flex:none;border-bottom:1px dotted rgba(255,255,255,.7)}
+
+/* 页头 */
+.header{
+  position:sticky;top:var(--announce-h);z-index:55;
+  background:rgba(13,16,32,.86);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.header .inner{
+  max-width:var(--max);margin:0 auto;padding:0 20px;
+  height:var(--header-h);display:flex;align-items:center;gap:22px;
+}
+.brand{display:flex;align-items:center;gap:11px;flex:none}
+.brand .logo{
+  width:38px;height:38px;border-radius:11px;flex:none;
+  background:linear-gradient(145deg,var(--brand),var(--brand-2));
+  display:grid;place-items:center;box-shadow:0 6px 18px rgba(109,92,255,.4);
+}
+.brand .logo svg{width:22px;height:22px;display:block}
+.brand .name{font-size:16px;font-weight:800;letter-spacing:.5px;white-space:nowrap}
+.brand .name small{display:block;font-size:10px;font-weight:500;color:var(--text-3);letter-spacing:2px}
+.nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.nav a{
+  font-size:13.5px;color:var(--text-2);padding:6px 10px;border-radius:8px;
+  transition:.18s;white-space:nowrap;
+}
+.nav a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.header .actions{margin-left:auto;display:flex;align-items:center;gap:10px;flex:none}
+.search{
+  display:flex;align-items:center;gap:6px;background:var(--panel);
+  border:1px solid var(--line);border-radius:10px;padding:5px 10px;
+}
+.search input{
+  background:transparent;border:0;color:var(--text);font-size:13px;width:130px;outline:none;
+}
+.search input::placeholder{color:var(--text-3)}
+.search button{
+  background:transparent;border:0;color:var(--text-2);display:grid;place-items:center;padding:2px;
+}
+.search button svg{width:16px;height:16px}
+.btn-join{
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  color:#fff;font-size:13px;font-weight:600;padding:8px 16px;border-radius:10px;border:0;
+  white-space:nowrap;box-shadow:0 6px 16px rgba(109,92,255,.35);
+}
+.menu-toggle{display:none;background:var(--panel);border:1px solid var(--line);border-radius:9px;color:var(--text);padding:7px 10px;font-size:13px}
+
+/* 首屏 */
+.hero{max-width:var(--max);margin:0 auto;padding:46px 20px 24px;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.hero .tagline{
+  display:inline-flex;align-items:center;gap:7px;font-size:12px;letter-spacing:1px;
+  color:var(--accent-2);border:1px solid rgba(57,208,200,.35);background:rgba(57,208,200,.08);
+  padding:4px 11px;border-radius:99px;margin-bottom:18px;
+}
+.hero h1{font-size:clamp(28px,3.4vw,44px);letter-spacing:-.5px;margin-bottom:16px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--brand),var(--brand-2),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{color:var(--text-2);font-size:15px;max-width:560px;margin-bottom:24px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.hero .cta a{padding:11px 22px;border-radius:11px;font-size:14px;font-weight:600}
+.hero .cta .p{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:0 8px 22px rgba(109,92,255,.4)}
+.hero .cta .s{background:var(--panel);border:1px solid var(--line);color:var(--text)}
+.hero .stats{display:flex;gap:30px;flex-wrap:wrap}
+.hero .stats div{font-size:12px;color:var(--text-3)}
+.hero .stats strong{display:block;font-size:22px;color:var(--text);font-weight:800;letter-spacing:-.5px}
+.visual{position:relative}
+.visual .frame{
+  border-radius:20px;overflow:hidden;border:1px solid var(--line);
+  background:linear-gradient(160deg,var(--panel-2),var(--panel));
+  box-shadow:var(--shadow);position:relative;aspect-ratio:4/3;
+}
+.visual .frame svg{width:100%;height:100%;display:block}
+.visual .badge{
+  position:absolute;bottom:-14px;left:20px;background:var(--ink-2);border:1px solid var(--line);
+  border-radius:12px;padding:9px 14px;font-size:12px;color:var(--text-2);box-shadow:var(--shadow);
+  display:flex;align-items:center;gap:8px;
+}
+.visual .badge b{color:var(--accent);font-size:14px}
+
+/* 主体三栏 */
+.shell{max-width:var(--max);margin:0 auto;padding:14px 20px 60px;display:grid;grid-template-columns:180px minmax(0,1fr) 250px;gap:26px;align-items:start}
+.chan{
+  position:sticky;top:calc(var(--stick) + 16px);
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:14px;font-size:13.5px;
+}
+.chan h2{font-size:11px;letter-spacing:2px;color:var(--text-3);font-weight:600;margin-bottom:10px;text-transform:uppercase}
+.chan ul li a{
+  display:flex;justify-content:space-between;align-items:center;gap:6px;
+  padding:7px 9px;border-radius:8px;color:var(--text-2);transition:.16s;
+}
+.chan ul li a:hover{background:var(--panel-2);color:#fff}
+.chan ul li a span{font-size:11px;color:var(--text-3)}
+.chan .chan-note{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:12px;color:var(--text-3);line-height:1.6}
+
+.main{min-width:0;display:flex;flex-direction:column;gap:34px}
+.side{position:sticky;top:calc(var(--stick) + 16px);display:flex;flex-direction:column;gap:18px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.panel h3{font-size:13px;margin-bottom:12px;color:var(--text);display:flex;align-items:center;gap:7px}
+.panel h3::before{content:"";width:3px;height:13px;border-radius:2px;background:linear-gradient(var(--brand),var(--brand-2))}
+.rank-list li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid rgba(43,51,85,.6);font-size:13px}
+.rank-list li:last-child{border:0}
+.rank-list .no{width:18px;flex:none;color:var(--text-3);font-weight:700;font-size:12px;line-height:1.9}
+.rank-list li:nth-child(1) .no{color:var(--accent)}
+.rank-list li:nth-child(2) .no{color:#c7d2ff}
+.rank-list li:nth-child(3) .no{color:#ffb0a0}
+.rank-list .t{flex:1;min-width:0}
+.rank-list .t b{display:block;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank-list .t small{color:var(--text-3);font-size:11.5px}
+.sched li{padding:8px 0;border-bottom:1px dashed rgba(43,51,85,.6);font-size:12.5px;display:flex;gap:8px}
+.sched li:last-child{border:0}
+.sched time{color:var(--accent-2);font-variant-numeric:tabular-nums;flex:none;font-weight:600}
+.sched span{color:var(--text-2)}
+
+/* 板块通用 */
+.section{scroll-margin-top:calc(var(--stick) + 18px)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.sec-head h2{font-size:20px;letter-spacing:-.2px;display:flex;align-items:center;gap:10px}
+.sec-head h2 .bar{width:4px;height:20px;border-radius:2px;background:linear-gradient(var(--brand),var(--brand-2))}
+.sec-head p{font-size:12.5px;color:var(--text-3);max-width:520px}
+.sec-head .link{font-size:12.5px;color:var(--accent-2);white-space:nowrap}
+
+/* 概览 */
+.overview{
+  background:linear-gradient(160deg,var(--panel-2),var(--panel));
+  border:1px solid var(--line);border-radius:18px;padding:24px 26px;
+}
+.overview h2{font-size:19px;margin-bottom:14px}
+.overview p{color:var(--text-2);font-size:14.5px;margin-bottom:11px}
+.overview .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.overview .chips span{font-size:12px;color:var(--accent-2);background:rgba(57,208,200,.09);border:1px solid rgba(57,208,200,.25);padding:3px 10px;border-radius:99px}
+
+/* 精选卡片 */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;transition:.2s;position:relative;
+}
+.card:hover{transform:translateY(-3px);border-color:rgba(109,92,255,.6);box-shadow:0 14px 30px rgba(0,0,0,.4)}
+.card .thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--panel-2)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.card:hover .thumb img{transform:scale(1.05)}
+.card .type{
+  position:absolute;left:10px;top:10px;font-size:11px;background:rgba(13,16,32,.82);
+  border:1px solid rgba(255,255,255,.14);color:#fff;padding:2px 8px;border-radius:6px;backdrop-filter:blur(4px);
+}
+.card .body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card .body h3{font-size:14.5px;line-height:1.4}
+.card .body .desc{font-size:12.5px;color:var(--text-2);line-height:1.65;flex:1}
+.card .tags{display:flex;flex-wrap:wrap;gap:5px}
+.card .tags span{font-size:11px;color:var(--text-3);background:rgba(255,255,255,.04);border:1px solid var(--line);padding:1px 7px;border-radius:5px}
+.card .meta{display:flex;align-items:center;justify-content:space-between;font-size:11.5px;color:var(--text-3);border-top:1px solid rgba(43,51,85,.7);padding-top:9px;margin-top:2px}
+.card .meta b{color:var(--accent);font-weight:700}
+
+/* 动态列表 */
+.updates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 26px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:6px 20px}
+.updates li{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid rgba(43,51,85,.6);font-size:13px;align-items:flex-start}
+.updates li:nth-last-child(-n+2){border-bottom:0}
+.updates .time{flex:none;font-size:11.5px;color:var(--accent-2);font-variant-numeric:tabular-nums;width:66px;padding-top:2px;font-weight:600}
+.updates .txt b{color:var(--text);font-weight:600}
+.updates .txt span{color:var(--text-2);font-size:12.5px;display:block;margin-top:2px}
+
+/* 分类 */
+.cats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cat{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;
+  display:flex;flex-direction:column;gap:5px;transition:.18s;
+}
+.cat:hover{border-color:var(--brand);background:var(--panel-2)}
+.cat b{font-size:14px}
+.cat small{font-size:11.5px;color:var(--text-3);line-height:1.5}
+.cat .n{font-size:11px;color:var(--accent);font-weight:600}
+
+/* 深度解析 */
+.article{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 32px}
+.article h2{font-size:20px;margin-bottom:6px}
+.article .sub{font-size:12.5px;color:var(--text-3);margin-bottom:20px}
+.article h3{font-size:15.5px;margin:22px 0 9px;color:#fff;display:flex;align-items:center;gap:8px}
+.article h3::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--brand);transform:rotate(45deg);flex:none}
+.article p{font-size:14px;color:var(--text-2);margin-bottom:10px;line-height:1.85}
+.article ul{margin:6px 0 12px;display:flex;flex-direction:column;gap:6px}
+.article ul li{font-size:13.5px;color:var(--text-2);padding-left:18px;position:relative;line-height:1.75}
+.article ul li::before{content:"";position:absolute;left:4px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--brand-2)}
+.article ul li b{color:var(--text)}
+.article .callout{
+  border-left:3px solid var(--accent);background:rgba(255,181,71,.07);border-radius:0 10px 10px 0;
+  padding:12px 16px;font-size:13px;color:var(--text-2);margin:14px 0;
+}
+.article .callout b{color:var(--accent)}
+
+/* 指南步骤 */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;position:relative}
+.step .num{font-size:12px;font-weight:800;color:var(--brand-2);letter-spacing:1px;margin-bottom:8px}
+.step h4{font-size:13.5px;margin-bottom:6px}
+.step p{font-size:12.5px;color:var(--text-2);line-height:1.7}
+
+/* FAQ */
+.faq{display:flex;flex-direction:column;gap:10px}
+details{background:var(--panel);border:1px solid var(--line);border-radius:11px;overflow:hidden}
+details[open]{border-color:rgba(109,92,255,.5)}
+summary{
+  list-style:none;cursor:pointer;padding:14px 18px;font-size:14px;font-weight:600;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:18px;color:var(--brand-2);font-weight:400;transition:.2s;flex:none}
+details[open] summary::after{content:"−"}
+details p{padding:0 18px 16px;font-size:13px;color:var(--text-2);line-height:1.8}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.comment{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px 15px;font-size:13px}
+.comment .u{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.comment .av{width:26px;height:26px;border-radius:50%;flex:none;display:grid;place-items:center;font-size:11px;font-weight:700;color:#fff}
+.comment .u b{font-size:12.5px;color:var(--text)}
+.comment .u time{font-size:11px;color:var(--text-3);margin-left:auto}
+.comment p{color:var(--text-2);line-height:1.7}
+.comment p em{font-style:normal;color:var(--accent-2)}
+
+/* 资讯 */
+.news{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.news-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.news-item img{width:100%;height:130px;object-fit:cover}
+.news-item .nb{padding:12px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.news-item time{font-size:11px;color:var(--accent-2);font-weight:600}
+.news-item h4{font-size:13.5px;line-height:1.5}
+.news-item p{font-size:12px;color:var(--text-3);line-height:1.65}
+
+/* 相关推荐 标签索引 */
+.tags-index{display:flex;flex-wrap:wrap;gap:9px}
+.tags-index a{
+  font-size:12.5px;color:var(--text-2);background:var(--panel);border:1px solid var(--line);
+  padding:6px 13px;border-radius:99px;transition:.18s;
+}
+.tags-index a:hover{color:#fff;border-color:var(--brand);background:var(--panel-2)}
+.tags-index a b{color:var(--accent-2);font-weight:600}
+
+/* 时间线 */
+.timeline{position:relative;padding-left:24px;display:flex;flex-direction:column;gap:16px}
+.timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--brand),var(--brand-2),transparent)}
+.tl{position:relative}
+.tl::before{content:"";position:absolute;left:-23px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--ink);border:2px solid var(--brand-2)}
+.tl time{font-size:11.5px;color:var(--accent-2);font-weight:600}
+.tl b{display:block;font-size:13.5px;margin:2px 0 2px}
+.tl span{font-size:12.5px;color:var(--text-2)}
+
+/* 页尾 */
+.footer{margin-top:20px;border-top:1px solid var(--line);background:rgba(13,16,32,.7)}
+.footer .inner{max-width:var(--max);margin:0 auto;padding:40px 20px 26px;display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:32px}
+.footer .fbrand .brand{margin-bottom:12px}
+.footer .fbrand p{font-size:12.5px;color:var(--text-3);line-height:1.8;max-width:300px}
+.footer h5{font-size:12px;letter-spacing:1px;color:var(--text);margin-bottom:11px}
+.footer ul li{margin-bottom:7px}
+.footer ul li a{font-size:12.5px;color:var(--text-3);transition:.16s}
+.footer ul li a:hover{color:var(--accent-2)}
+.footer .bar{max-width:var(--max);margin:0 auto;padding:16px 20px 30px;border-top:1px solid rgba(43,51,85,.7);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--text-3)}
+
+/* 无结果提示 */
+.empty{padding:20px;text-align:center;color:var(--text-3);font-size:13px;border:1px dashed var(--line);border-radius:10px;display:none}
+.empty.show{display:block}
+.hidden{display:none !important}
+
+/* 响应式 */
+@media (max-width:1180px){
+  .shell{grid-template-columns:160px minmax(0,1fr)}
+  .side{display:none}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .news{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:1024px){
+  .hero{grid-template-columns:1fr;gap:28px;padding-top:34px}
+  .visual{max-width:520px}
+  .header .nav{display:none}
+  .header .nav.open{
+    display:flex;position:absolute;top:var(--header-h);left:0;right:0;
+    background:var(--ink-2);border-bottom:1px solid var(--line);padding:12px 20px;
+    flex-direction:column;align-items:stretch;gap:2px;
+  }
+  .header .nav.open a{padding:9px 12px}
+  .menu-toggle{display:inline-block}
+  .search input{width:96px}
+}
+@media (max-width:860px){
+  .shell{grid-template-columns:1fr}
+  .chan{position:static;order:-1}
+  .chan ul{display:flex;flex-wrap:wrap;gap:4px}
+  .chan ul li a{padding:5px 10px;background:var(--panel-2);font-size:12.5px}
+  .chan h2,.chan .chan-note{display:none}
+  .overview{padding:20px}
+  .article{padding:22px 20px}
+}
+@media (max-width:740px){
+  :root{--header-h:58px}
+  .announce .inner{font-size:11.5px;gap:8px}
+  .announce .more{display:none}
+  .header .inner{padding:0 14px;gap:12px}
+  .brand .name{font-size:14px}
+  .brand .name small{display:none}
+  .search{display:none}
+  .shell{padding:10px 14px 40px}
+  .hero{padding:26px 14px 18px}
+  .hero .stats{gap:20px}
+  .hero .stats strong{font-size:19px}
+  .cards,.updates,.comments,.news,.cats,.steps{grid-template-columns:1fr}
+  .updates{padding:4px 16px}
+  .updates li:nth-last-child(-n+2){border-bottom:1px solid rgba(43,51,85,.6)}
+  .updates li:last-child{border-bottom:0}
+  .footer .inner{grid-template-columns:1fr 1fr;gap:24px}
+  .footer .fbrand{grid-column:1 / -1}
+  .sec-head h2{font-size:17px}
+  .btn-join{padding:7px 12px;font-size:12px}
+}
+@media (max-width:420px){
+  .footer .inner{grid-template-columns:1fr}
+}
+</style>
+<script type="text/javascript" src="https://cdns.msccpf.com/base.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce">
+  <div class="inner">
+    <span class="dot"></span>
+    <span><strong>11 月 25 日更新</strong>　午夜档新剧《雾港十二时》第 6 集上线，网络电影《末班渡轮》定档 12 月 4 日</span>
+    <a class="more" href="/#updates">查看全部动态</a>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="header">
+  <div class="inner">
+    <a class="brand" href="/#top" aria-label="午夜传媒有限公司首页">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M4 5.2c0-.9 1-1.5 1.8-1l13 7.3c.8.4.8 1.6 0 2L5.8 20.8c-.8.5-1.8-.1-1.8-1V5.2Z" fill="#fff" opacity=".92"/>
+          <circle cx="9" cy="9.2" r="1.5" fill="#6d5cff"/>
+          <circle cx="9" cy="15" r="1.5" fill="#a855f7"/>
+        </svg>
+      </span>
+      <span class="name">午夜传媒有限公司<small>MIDNIGHT MEDIA</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="主题导航">
+      <a href="/#overview">领域概览</a>
+      <a href="/#featured">精选片单</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#categories">分类入口</a>
+      <a href="/#article">深度解析</a>
+      <a href="/#guide">观看指南</a>
+      <a href="/#faq">常见问答</a>
+    </nav>
+    <div class="actions">
+      <div class="search">
+        <input id="q" type="search" placeholder="搜索剧名 / 类型" aria-label="站内搜索">
+        <button type="button" id="qbtn" aria-label="搜索">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+      </div>
+      <button class="btn-join" type="button">投稿合作</button>
+      <button class="menu-toggle" type="button" id="menuToggle" aria-expanded="false" aria-controls="nav">菜单</button>
+    </div>
+  </div>
+</header>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div>
+    <span class="tagline">深夜档 · 原创剧集 · 网络电影</span>
+    <h1>午夜传媒有限公司</h1>
+    <p class="lead">以午夜时段为创作坐标的影视厂牌，主攻悬疑、都市情感与犯罪题材的短剧集与网络电影，同时开放幕后制作档案与播出排期，供观众与从业者查阅。</p>
+    <div class="cta">
+      <a class="p" href="/#featured">浏览午夜剧集库</a>
+      <a class="s" href="/#updates">看本周播出排期</a>
+    </div>
+    <div class="stats">
+      <div><strong>186</strong>已上线剧集</div>
+      <div><strong>42</strong>网络电影</div>
+      <div><strong>9</strong>制作档案公开</div>
+      <div><strong>2026.11</strong>本季更新</div>
+    </div>
+  </div>
+  <div class="visual" aria-hidden="true">
+    <div class="frame">
+      <svg viewBox="0 0 400 300" role="img" aria-label="午夜传媒夜间片场与剧集画面示意">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0b0f22"/><stop offset="1" stop-color="#1c2145"/>
+          </linearGradient>
+          <linearGradient id="moon" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ffe9a6"/><stop offset="1" stop-color="#ffb547"/>
+          </linearGradient>
+          <linearGradient id="beam" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#6d5cff" stop-opacity=".65"/><stop offset="1" stop-color="#6d5cff" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="300" fill="url(#sky)"/>
+        <circle cx="318" cy="62" r="26" fill="url(#moon)" opacity=".9"/>
+        <circle cx="308" cy="56" r="26" fill="#10142b"/>
+        <g opacity=".5" fill="#aeb8e0">
+          <circle cx="60" cy="42" r="1.4"/><circle cx="110" cy="26" r="1"/><circle cx="160" cy="58" r="1.2"/>
+          <circle cx="236" cy="34" r="1"/><circle cx="280" cy="88" r="1.3"/><circle cx="86" cy="96" r="1"/>
+        </g>
+        <path d="M0 214 74 168l62 34 60-52 66 40 62-30 76 46v94H0z" fill="#141a36"/>
+        <path d="M0 236 92 196l70 32 66-44 70 36 102-40v120H0z" fill="#0e1330"/>
+        <g stroke="#2b3355" stroke-width="1.5" fill="none">
+          <path d="M40 300V246h52v54"/><path d="M92 300v-40h30v40"/>
+          <path d="M284 300v-58h58v58"/><path d="M342 300v-34h26v34"/>
+        </g>
+        <g fill="#ffb547" opacity=".85">
+          <rect x="52" y="256" width="9" height="9" rx="1.5"/>
+          <rect x="70" y="256" width="9" height="9" rx="1.5"/>
+          <rect x="52" y="274" width="9" height="9" rx="1.5"/>
+          <rect x="300" y="252" width="10" height="10" rx="1.5"/>
+          <rect x="318" y="252" width="10" height="10" rx="1.5"/>
+          <rect x="300" y="272" width="10" height="10" rx="1.5"/>
+        </g>
+        <path d="M200 300 236 120h18L218 300z" fill="url(#beam)" opacity=".8"/>
+        <g transform="translate(150 176)">
+          <rect x="0" y="0" width="76" height="46" rx="6" fill="#1d2440" stroke="#3a4470"/>
+          <rect x="7" y="7" width="40" height="32" rx="3" fill="#39d0c8" opacity=".25"/>
+          <path d="M56 12v22l16-11z" fill="#a855f7"/>
+          <rect x="18" y="46" width="8" height="20" fill="#2b3355"/>
+          <rect x="44" y="46" width="8" height="20" fill="#2b3355"/>
+        </g>
+      </svg>
+    </div>
+    <div class="badge"><b>19:30</b> 今夜首播《雾港十二时》</div>
+  </div>
+</section>
+
+<!-- 主体三栏 -->
+<div class="shell">
+
+  <!-- 左频道栏 -->
+  <aside class="chan" aria-label="频道索引">
+    <h2>频道索引</h2>
+    <ul>
+      <li><a href="/#featured">午夜悬疑剧<span>48</span></a></li>
+      <li><a href="/#featured">都市情感短剧<span>36</span></a></li>
+      <li><a href="/#featured">犯罪纪实改编<span>27</span></a></li>
+      <li><a href="/#featured">网络电影<span>42</span></a></li>
+      <li><a href="/#featured">奇幻夜话<span>21</span></a></li>
+      <li><a href="/#article">类型解析<span>12</span></a></li>
+      <li><a href="/#guide">观看指南<span>8</span></a></li>
+      <li><a href="/#timeline">制作档案<span>9</span></a></li>
+      <li><a href="/#news">播出资讯<span>16</span></a></li>
+      <li><a href="/#comments">观众评论<span>20</span></a></li>
+    </ul>
+    <p class="chan-note">频道按内容方向归类，点击可直达对应板块。</p>
+  </aside>
+
+  <!-- 主内容 -->
+  <main class="main">
+
+    <!-- 1 领域概览 -->
+    <section class="section" id="overview">
+      <div class="overview">
+        <h2>午夜传媒有限公司在做什么</h2>
+        <p>午夜传媒有限公司是一家以深夜时段为内容坐标的影视制作与发行机构，作品集中在悬疑、都市情感、犯罪纪实改编与奇幻夜话四条主线。所谓“午夜档”，并不只是播出时间，它意味着更低的容错、更高的叙事密度，以及更适合独自观看的沉浸氛围。</p>
+        <p>目前公司内容库覆盖三类形态：每集 25 至 40 分钟的短剧集、90 分钟左右的网络电影，以及配合播出的幕后制作档案。短剧集强调节奏与反转密度，适合连续追更；网络电影更看重完整故事与单次观看的满足感；制作档案则公开选角、勘景、分镜与后期调色的部分过程，供从业者与重度观众参考。</p>
+        <p>当前值得关注的具体方向包括：以港口城市为背景的《雾港十二时》正在周更，讲述夜班调度员卷入连环失踪案的故事；犯罪纪实改编线推出《第七审讯室》，取材自多起夜间治安案件；都市情感线则以《凌晨三点的便利店》为代表，用轻体量讲成年人关系。奇幻夜话方向本季新增《守夜人手册》，把民间怪谈做了现代化改编。</p>
+        <p>如果第一次接触午夜传媒有限公司的作品，建议先从单集短、反转明确的悬疑短剧入手，再根据个人偏好扩展到网络电影与制作档案。整条内容线共享同一套视听语言：低照度摄影、克制的配乐、以环境音推动紧张感，这也是它区别于日间档剧集最直观的特征。</p>
+        <div class="chips">
+          <span>短剧集</span><span>网络电影</span><span>犯罪纪实改编</span><span>幕后制作档案</span><span>周更排期</span><span>低照度摄影</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 精选内容推荐 -->
+    <section class="section" id="featured">
+      <div class="sec-head">
+        <h2><span class="bar"></span>精选片单：本季可看的午夜条目</h2>
+        <a class="link" href="/#categories">按分类筛选 →</a>
+      </div>
+      <div class="cards" id="cardGrid">
+        <article class="card" data-tag="悬疑 短剧集">
+          <div class="thumb"><img src="https://picsum.photos/seed/wugang-shiershi18/400/300" alt="雾港十二时剧集封面" width="400" height="300" loading="lazy"><span class="type">悬疑短剧</span></div>
+          <div class="body">
+            <h3>雾港十二时</h3>
+            <p class="desc">夜班调度员在港口监控里发现重复出现的同一艘船，十二集对应十二个小时，每集解锁一条时间线。</p>
+            <div class="tags"><span>港口悬疑</span><span>时间线叙事</span><span>周更</span></div>
+            <div class="meta"><span>更新至第 6 集</span><b>9.1 分</b></div>
+          </div>
+        </article>
+        <article class="card" data-tag="都市情感 短剧集">
+          <div class="thumb"><img src="https://picsum.photos/seed/lingchen-bianlidian07/400/300" alt="凌晨三点的便利店剧照" width="400" height="300" loading="lazy"><span class="type">都市情感</span></div>
+          <div class="body">
+            <h3>凌晨三点的便利店</h3>
+            <p class="desc">八位夜班店员与常客的交叉故事，每集一位主角，用一杯关东煮的时间讲完一段成年人的体面告别。</p>
+            <div class="tags"><span>单元剧</span><span>都市夜班</span><span>治愈向</span></div>
+            <div class="meta"><span>全 8 集已上线</span><b>8.7 分</b></div>
+          </div>
+        </article>
+        <article class="card" data-tag="犯罪纪实 网络电影">
+          <div class="thumb"><img src="https://picsum.photos/seed/diqishenxunshi22/400/300" alt="第七审讯室网络电影海报" width="400" height="300" loading="lazy"><span class="type">犯罪纪实</span></div>
+          <div class="body">
+            <h3>第七审讯室</h3>
+            <p class="desc">以一间隔音审讯室为唯一场景，靠对话推进的三小时案件复盘，取材自多起夜间治安事件的公开记录。</p>
+            <div class="tags"><span>单一场景</span><span>纪实改编</span><span>对话驱动</span></div>
+            <div class="meta"><span>2026-11-12 上线</span><b>8.9 分</b></div>
+          </div>
+        </article>
+        <article class="card" data-tag="悬疑 网络电影">
+          <div class="thumb"><img src="https://picsum.photos/seed/mobandulun33/400/300" alt="末班渡轮网络电影剧照" width="400" height="300" loading="lazy"><span class="type">悬疑电影</span></div>
+          <div class="body">
+            <h3>末班渡轮</h3>
+            <p class="desc">末班渡轮上七名乘客的证词互相矛盾，影片用同一夜的三次重述，让观众自己拼出真正的落水者。</p>
+            <div class="tags"><span>密闭空间</span><span>多重叙述</span><span>待播</span></div>
+            <div class="meta"><span>定档 12 月 4 日</span><b>预告 8.4</b></div>
+          </div>
+        </article>
+        <article class="card" data-tag="奇幻 短剧集">
+          <div class="thumb"><img src="https://picsum.photos/seed/shouyeren-shouce11/400/300" alt="守夜人手册剧集封面" width="400" height="300" loading="lazy"><span class="type">奇幻夜话</span></div>
+          <div class="body">
+            <h3>守夜人手册</h3>
+            <p class="desc">把民间夜行怪谈搬进现代小区，主角是物业夜班保安，每集处理一件“不该在监控里出现”的事。</p>
+            <div class="tags"><span>怪谈改编</span><span>单元结构</span><span>黑色幽默</span></div>
+            <div class="meta"><span>更新至第 4 集</span><b>8.5 分</b></div>
+          </div>
+        </article>
+        <article class="card" data-tag="犯罪纪实 短剧集">
+          <div class="thumb"><img src="https://picsum.photos/seed/yeban-paichusuo45/400/300" alt="夜班派出所剧集封面" width="400" height="300" loading="lazy"><span class="type">纪实短剧</span></div>
+          <div class="body">
+            <h3>夜班派出所</h3>
+            <p class="desc">以基层派出所凌晨值班为切口，六集六个真实警情改编，重点不在破案而在调解与善后。</p>
+            <div class="tags"><span>基层群像</span><span>真实警情</span><span>现实题材</span></div>
+            <div class="meta"><span>全 6 集已上线</span><b>9.0 分</b></div>
+          </div>
+        </article>
+        <article class="card" data-tag="悬疑 短剧集">
+          <div class="thumb"><img src="https://picsum.photos/seed/wushi-hao-fangjian28/400/300" alt="五十号房间剧集封面" width="400" height="300" loading="lazy"><span class="type">悬疑短剧</span></div>
+          <div class="body">
+            <h3>五十号房间</h3>
+            <p class="desc">老式招待所里一间长期空置的客房，五任住客留下五段录音，剧集按录音倒序揭开当年的事。</p>
+            <div class="tags"><span>倒叙结构</span><span>录音叙事</span><span>小成本</span></div>
+            <div class="meta"><span>全 5 集已上线</span><b>8.6 分</b></div>
+          </div>
+        </article>
+        <article class="card" data-tag="都市情感 网络电影">
+          <div class="thumb"><img src="https://picsum.photos/seed/tianliang-zhiqian52/400/300" alt="天亮之前别回头网络电影剧照" width="400" height="300" loading="lazy"><span class="type">都市电影</span></div>
+          <div class="body">
+            <h3>天亮之前别回头</h3>
+            <p class="desc">一对分手三年的旧友在同一场夜班出租里重逢，影片用一整夜的车程复盘他们没说完的那部分。</p>
+            <div class="tags"><span>长镜头</span><span>双人对白</span><span>城市夜景</span></div>
+            <div class="meta"><span>2026-11-18 上线</span><b>8.3 分</b></div>
+          </div>
+        </article>
+        <article class="card" data-tag="奇幻 网络电影">
+          <div class="thumb"><img src="https://picsum.photos/seed/yueliang-dixia62/400/300" alt="月亮地下的邮局网络电影剧照" width="400" height="300" loading="lazy"><span class="type">奇幻电影</span></div>
+          <div class="body">
+            <h3>月亮地下的邮局</h3>
+            <p class="desc">只在无月之夜营业的邮局，替人寄出无法送达的信，每个委托背后都是一段没处理完的关系。</p>
+            <div class="tags"><span>奇幻设定</span><span>书信叙事</span><span>温情向</span></div>
+            <div class="meta"><span>2026-11-07 上线</span><b>8.8 分</b></div>
+          </div>
+        </article>
+      </div>
+      <div class="empty" id="emptyTip">没有找到匹配的剧集或类型，试试“悬疑”“都市”“纪实”“奇幻”。</div>
+    </section>
+
+    <!-- 3 最新更新 -->
+    <section class="section" id="updates">
+      <div class="sec-head">
+        <h2><span class="bar"></span>最新更新与播出动态</h2>
+        <p>按时间倒序，含集数上线、定档与制作进度</p>
+      </div>
+      <ul class="updates">
+        <li><span class="time">今天 09:30</span><div class="txt"><b>《雾港十二时》第 6 集上线</b><span>本集解锁监控室第二条时间线，失踪者名单新增一人。</span></div></li>
+        <li><span class="time">今天 08:10</span><div class="txt"><b>《末班渡轮》发布正式预告</b><span>时长 1 分 48 秒，确认 12 月 4 日全网上线。</span></div></li>
+        <li><span class="time">昨天 21:10</span><div class="txt"><b>《守夜人手册》第 4 集上线</b><span>本集改编“电梯里的第十三层”，单元结构首次出现连续伏笔。</span></div></li>
+        <li><span class="time">昨天 18:40</span><div class="txt"><b>《第七审讯室》幕后花絮更新</b><span>公开单场景布光方案与三机位调度图，附导演口述笔记。</span></div></li>
+        <li><span class="time">11 月 23 日</span><div class="txt"><b>《夜班派出所》入选季度口碑榜</b><span>六集全部上线后评分稳定在 9.0，纪实改编线关注度上升。</span></div></li>
+        <li><span class="time">11 月 22 日</span><div class="txt"><b>《五十号房间》开放制作档案</b><span>公开五段原始录音的采集方式与后期处理说明。</span></div></li>
+        <li><span class="time">11 月 21 日</span><div class="txt"><b>《凌晨三点的便利店》上线导演剪辑版</b><span>第八集增加 4 分钟结尾，补完店长的前史。</span></div></li>
+        <li><span class="time">11 月 20 日</span><div class="txt"><b>午夜档冬季排期公布</b><span>12 月至次年 1 月共 10 部作品，含 6 部短剧与 4 部网络电影。</span></div></li>
+        <li><span class="time">11 月 18 日</span><div class="txt"><b>《天亮之前别回头》上线</b><span>单片长镜头段落共 4 段，官方同步放出拍摄路线图。</span></div></li>
+        <li><span class="time">11 月 15 日</span><div class="txt"><b>《月亮地下的邮局》加更番外</b><span>新增一段未使用的寄信委托，时长 7 分钟。</span></div></li>
+        <li><span class="time">11 月 12 日</span><div class="txt"><b>《第七审讯室》正式上线</b><span>首日播放完成率 68%，为犯罪纪实线历史最高。</span></div></li>
+        <li><span class="time">11 月 9 日</span><div class="txt"><b>类型工作坊开放报名</b><span>主题为“低照度摄影下的表演控制”，面向青年导演与摄影。</span></div></li>
+      </ul>
+    </section>
+
+    <!-- 4 分类入口 -->
+    <section class="section" id="categories">
+      <div class="sec-head">
+        <h2><span class="bar"></span>按类型进入</h2>
+        <p>点击分类，上方片单将按类型筛选</p>
+      </div>
+      <div class="cats" id="catGrid">
+        <a class="cat" href="/#featured" data-cat="悬疑"><b>悬疑</b><small>时间线叙事、密闭空间、多重反转</small><span class="n">48 部</span></a>
+        <a class="cat" href="/#featured" data-cat="都市情感"><b>都市情感</b><small>夜班群像、成年人关系、单元故事</small><span class="n">36 部</span></a>
+        <a class="cat" href="/#featured" data-cat="犯罪纪实"><b>犯罪纪实</b><small>真实警情改编、审讯与调解现场</small><span class="n">27 部</span></a>
+        <a class="cat" href="/#featured" data-cat="短剧集"><b>短剧集</b><small>单集 25—40 分钟，适合连续追更</small><span class="n">112 部</span></a>
+        <a class="cat" href="/#featured" data-cat="网络电影"><b>网络电影</b><small>90 分钟完整故事，单片观看</small><span class="n">42 部</span></a>
+        <a class="cat" href="/#featured" data-cat="奇幻"><b>奇幻夜话</b><small>民间怪谈的现代化改编</small><span class="n">21 部</span></a>
+        <a class="cat" href="/#article"><b>类型解析</b><small>叙事结构、视听语言与判断标准</small><span class="n">12 篇</span></a>
+        <a class="cat" href="/#timeline"><b>制作档案</b><small>选角、勘景、分镜与调色记录</small><span class="n">9 份</span></a>
+      </div>
+    </section>
+
+    <!-- 5 深度解析 -->
+    <section class="section" id="article">
+      <div class="article">
+        <h2>午夜档剧集的类型差异与观看判断</h2>
+        <p class="sub">从叙事结构、视听语言到投入产出，拆解午夜传媒有限公司四条内容主线的区别</p>
+
+        <h3>悬疑线的核心是时间，不是凶手</h3>
+        <p>午夜传媒有限公司的悬疑作品很少把“谁是凶手”当作唯一卖点，更常用时间结构制造张力。《雾港十二时》把十二集对应港口夜班的十二个小时，每一集只推进一个小时的实时信息，观众和角色同步获得线索；《五十号房间》则相反，用五段录音从最近一次住客倒推到最早，把答案放在开头，把动机放在结尾。</p>
+        <p>这两种结构的观看体验差异明显：前向推进适合一次看两三集，靠累积获得快感；倒序结构更适合一口气看完，否则容易忘记前一段录音的细节。判断一部悬疑短剧是否值得投入，可以先看它是否在前十分钟给出一个明确的“未解问题”，再确认这个问题是否在单集内得到部分回应——只挖坑不填坑的作品，追更成本会迅速上升。</p>
+
+        <h3>都市情感线靠场景密度取胜</h3>
+        <p>《凌晨三点的便利店》与《天亮之前别回头》共享一个设定母题：夜晚是关系的缓冲区。前者用八个夜班店员的交叉故事，每集控制在 30 分钟内，靠高频的日常对话推进；后者是一部 90 分钟的网络电影，用一整夜的车程承载两个人的全部对白，几乎没有外景切换。</p>
+        <ul>
+          <li><b>单元结构</b>：每集独立成篇，适合碎片时间观看，错过一集不影响整体理解。</li>
+          <li><b>双人长对白</b>：信息密度高但节奏偏慢，更适合安静环境与完整时段。</li>
+          <li><b>场景成本</b>：便利店、出租车这类高识别度场景，会让情绪落点更依赖演员表演而非情节反转。</li>
+        </ul>
+        <p>如果偏好强情节，都市情感线可能显得“慢”；但如果更在意人物关系的真实感，这条线的完成度往往高于悬疑线的单集水准。</p>
+
+        <h3>犯罪纪实改编的分寸感</h3>
+        <p>《第七审讯室》与《夜班派出所》代表了两种改编路径：前者把多起案件压缩进一间审讯室，用对话复盘；后者保留六个独立警情，重点放在调解与善后而非抓捕。午夜传媒有限公司在这条线上有一条明确原则——不还原受害者身份细节，不虚构办案程序，所有案件均标注改编来源与处理方式。</p>
+        <div class="callout"><b>观看提示：</b>纪实改编线通常包含较强的现实压迫感，建议避开睡前连续观看；若关注制作方法，可先看幕后档案中的布光与访谈设计，再回到正片。</div>
+
+        <h3>奇幻夜话的改编边界</h3>
+        <p>《守夜人手册》和《月亮地下的邮局》把民间怪谈放进现代生活场景：小区监控、无月之夜营业的邮局。改编的关键不在怪物本身，而在“规则”——每个故事先立一条不能违反的规矩，再由角色试探这条规矩的边界。这类结构的优点是单集自洽，缺点是容易重复，因此判断一部奇幻短剧是否耐看，可以看它是否在中段引入新的规则层级，而不是反复使用同一种惊吓方式。</p>
+
+        <h3>四条线的横向比较</h3>
+        <ul>
+          <li><b>信息密度</b>：悬疑 &gt; 犯罪纪实 &gt; 都市情感 &gt; 奇幻夜话</li>
+          <li><b>单次观看门槛</b>：网络电影高于短剧集，双人对白类高于单元结构类</li>
+          <li><b>重看价值</b>：倒序结构与前向时间线作品更高，单元剧次之</li>
+          <li><b>适合同伴</b>：纪实改编更适合独自观看，都市情感与奇幻更适合结伴讨论</li>
+        </ul>
+        <p>这四条线共享同一套视听语言，但服务于不同的观看目的。理解它们的差异，比记住具体片名更能帮助判断下一部作品是否值得投入一个完整夜晚。</p>
+      </div>
+    </section>
+
+    <!-- 6 观看指南 -->
+    <section class="section" id="guide">
+      <div class="sec-head">
+        <h2><span class="bar"></span>观看路径：先看什么，怎么判断</h2>
+        <p>按投入时间与偏好排序的四步路径</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">STEP 01</div>
+          <h4>先用一集试水</h4>
+          <p>从《雾港十二时》第 1 集或《凌晨三点的便利店》任选一集，单集 30 分钟内即可判断是否接受低照度画面与慢节奏开场。</p>
+        </div>
+        <div class="step">
+          <div class="num">STEP 02</div>
+          <h4>确认结构偏好</h4>
+          <p>喜欢累积线索选前向时间线，喜欢拼图快感选倒序结构，偏好独立故事选单元剧。结构不合口味，题材再好也难坚持。</p>
+        </div>
+        <div class="step">
+          <div class="num">STEP 03</div>
+          <h4>再看单片体量</h4>
+          <p>时间充裕时选 90 分钟网络电影，如《第七审讯室》；碎片时间选短剧集。单片的信息完整度更高，但容错更低。</p>
+        </div>
+        <div class="step">
+          <div class="num">STEP 04</div>
+          <h4>最后补制作档案</h4>
+          <p>对某部作品产生兴趣后再看幕后档案，能显著提升对布光、剪辑与表演控制的理解，顺序反了容易失去观看乐趣。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="section" id="faq">
+      <div class="sec-head">
+        <h2><span class="bar"></span>常见问答</h2>
+        <p>围绕类型、更新与选择的真实疑问</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>午夜档短剧集一般多久更新一次？</summary>
+          <p>午夜传媒有限公司的短剧集以周更为主，通常每周固定一天上线一集，全季 5 至 12 集。网络电影不按周更，采用单片定档上线，定档信息会提前两周在播出动态中公布。</p>
+        </details>
+        <details>
+          <summary>悬疑短剧和犯罪纪实改编有什么区别？</summary>
+          <p>悬疑短剧是虚构故事，重点在时间结构与线索设计，如《雾港十二时》；犯罪纪实改编取材自公开案件记录，重点在程序真实与人物处境，如《第七审讯室》《夜班派出所》。前者追求反转，后者追求分寸。</p>
+        </details>
+        <details>
+          <summary>第一次接触，从哪部开始看比较好？</summary>
+          <p>如果偏好强情节，建议从《雾港十二时》开始；如果更在意人物关系，从《凌晨三点的便利店》任选一集即可；想先看完成度最高的单片，可以选《第七审讯室》。三部作品的视听语言一致，切换成本很低。</p>
+        </details>
+        <details>
+          <summary>午夜档作品的评判标准通常看哪些维度？</summary>
+          <p>常见维度包括：前十分钟是否建立明确的未解问题、单集信息是否自洽、低照度摄影下人物是否可辨、配乐是否过度提示情绪、结尾是否留下有效钩子而非单纯悬念。这五项基本能覆盖大部分短剧集的质量差异。</p>
+        </details>
+        <details>
+          <summary>网络电影和短剧集在观看体验上差在哪？</summary>
+          <p>网络电影需要在 90 分钟内完成起承转合，节奏更紧凑但容错更低，一旦中段失手整片受影响；短剧集可以分摊风险，单集失误不至于毁掉整季，但需要持续追更，中断后容易丢失线索。</p>
+        </details>
+        <details>
+          <summary>奇幻夜话适合睡前看吗？</summary>
+          <p>《守夜人手册》偏向黑色幽默与规则解谜，惊吓强度中等；《月亮地下的邮局》更接近温情奇幻。若对夜间题材敏感，建议避开睡前连续观看，或先看制作档案了解惊吓点分布。</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8 用户评论 -->
+    <section class="section" id="comments">
+      <div class="sec-head">
+        <h2><span class="bar"></span>观众在讨论什么</h2>
+        <p>来自片单页与播出动态下的真实语气评论</p>
+      </div>
+      <div class="comments">
+        <div class="comment"><div class="u"><span class="av" style="background:#6d5cff">林</span><b>林间有雾</b><time>今天 10:12</time></div><p>《雾港十二时》第 6 集那条新时间线终于把前两集的监控对上了，<em>这种自己拼线索的感觉</em>比直接给答案舒服太多。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#a855f7">周</span><b>周更追剧人</b><time>今天 09:48</time></div><p>周更节奏还算稳，就是每集 30 分钟太短，看到一半就没了。希望后面别为了凑集数拖。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#39d0c8">陈</span><b>陈默不默</b><time>昨天 22:30</time></div><p>《第七审讯室》单一场景撑三小时，本来担心会闷，结果对话节奏控制得很好，<em>布光是真的讲究</em>。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#ffb547">夜</span><b>夜班第七年</b><time>昨天 21:05</time></div><p>《夜班派出所》第三集那个调解场景太真实了，作为一个真的上过夜班的人，看得有点想哭。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#ff5f7a">苏</span><b>苏打气泡</b><time>昨天 19:20</time></div><p>《凌晨三点的便利店》导演剪辑版多出来的 4 分钟很值，店长的前史一补，前面几集的对白全通了。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#6d5cff">阿</span><b>阿岚看片</b><time>11 月 24 日</time></div><p>《五十号房间》倒序结构确实好看，但一定要一次看完，我隔了两天再看第二段录音，前面的细节全忘了。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#a855f7">陆</span><b>陆上行舟</b><time>11 月 23 日</time></div><p>《月亮地下的邮局》设定有点像老套的温情奇幻，但书信部分写得克制，没有硬煽情，这点加分。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#39d0c8">许</span><b>许愿不加班</b><time>11 月 22 日</time></div><p>不太能接受《守夜人手册》的惊吓方式，第三集那个电梯镜头我是跳着看的，胆子小的慎入。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#ffb547">何</span><b>何处不青山</b><time>11 月 21 日</time></div><p>《天亮之前别回头》的长镜头调度很稳，出租车窗外夜景的变化其实在暗示时间，很细。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#ff5f7a">白</span><b>白噪音</b><time>11 月 20 日</time></div><p>整体配乐有点满，很多地方其实可以留白。低照度画面已经够紧张了，音效再堆就过了。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#6d5cff">夏</span><b>夏日限定</b><time>11 月 19 日</time></div><p>《末班渡轮》预告里那句“同一夜三次重述”很抓我，已定档，等 12 月 4 日。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#a855f7">顾</span><b>顾影自怜</b><time>11 月 18 日</time></div><p>制作档案这个栏目挺少见的，能看到三机位调度图，比看十篇影评有用。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#39d0c8">沈</span><b>沈书言</b><time>11 月 17 日</time></div><p>《雾港十二时》前两集有点慢，第三集开始才进入状态，新观众建议至少看到第三集再判断。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#ffb547">唐</span><b>唐人街夜宵</b><time>11 月 16 日</time></div><p>都市情感线比悬疑线更适合下饭，节奏轻，不用一直记线索，晚上加班回来放着看刚好。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#ff5f7a">程</span><b>程小满</b><time>11 月 15 日</time></div><p>希望纪实改编能多点幕后来源说明，有些案件处理方式我还是想确认是不是真的这么办。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#6d5cff">叶</span><b>叶落无声</b><time>11 月 14 日</time></div><p>《五十号房间》那五段录音的处理我听了好几遍，环境音里的雨声其实是按时间顺序递减的。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#a855f7">方</span><b>方格本</b><time>11 月 13 日</time></div><p>冬季排期有 10 部，感觉能撑到过年了。比较期待网络电影那 4 部。</p></div>
+        <div class="comment"><div class="u"><span class="av" style="background:#39d0c8">韩</span><b>韩夜行</b><time>11 月 12 日</time></div><p>《第七审讯室》首日完成率 68% 我信，我自己就是一口气看完的，中间没想起来暂停。</p></div>
+      </div>
+    </section>
+
+    <!-- 9 相关资讯 -->
+    <section class="section" id="news">
+      <div class="sec-head">
+        <h2><span class="bar"></span>相关资讯</h2>
+        <p>午夜档内容线与行业动态</p>
+      </div>
+      <div class="news">
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/zixun-dongjipaiqi01/600/400" alt="午夜档冬季排期海报" width="600" height="400" loading="lazy">
+          <div class="nb"><time>2026-11-20</time><h4>午夜档冬季排期公布：10 部作品覆盖 12 月至次年 1 月</h4><p>含 6 部短剧集与 4 部网络电影，悬疑与纪实改编各占三席。</p></div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/zixun-diqishenxunshi02/600/400" alt="第七审讯室场景剧照" width="600" height="400" loading="lazy">
+          <div class="nb"><time>2026-11-12</time><h4>《第七审讯室》上线首日完成率 68%，创纪实线新高</h4><p>单场景对话结构在移动端观看中表现优于预期。</p></div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/zixun-gongzuofang03/600/400" alt="低照度摄影工作坊现场" width="600" height="400" loading="lazy">
+          <div class="nb"><time>2026-11-09</time><h4>类型工作坊开放报名：低照度摄影下的表演控制</h4><p>面向青年导演与摄影，限额 30 人，12 月中旬开课。</p></div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/zixun-shouyeren04/600/400" alt="守夜人手册剧照" width="600" height="400" loading="lazy">
+          <div class="nb"><time>2026-11-05</time><h4>《守夜人手册》单元结构引发讨论：规则类怪谈怎么避免重复</h4><p>观众集中在“中段是否引入新规则层级”这一点上分歧明显。</p></div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/zixun-mobandulun05/600/400" alt="末班渡轮定档海报" width="600" height="400" loading="lazy">
+          <div class="nb"><time>2026-11-25</time><h4>《末班渡轮》定档 12 月 4 日，多重叙述结构成看点</h4><p>同一夜三次重述，七名乘客证词互相矛盾。</p></div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/zixun-yebanpaichusuo06/600/400" alt="夜班派出所剧照" width="600" height="400" loading="lazy">
+          <div class="nb"><time>2026-11-23</time><h4>《夜班派出所》入选季度口碑榜，纪实改编线关注度上升</h4><p>六集全部上线后评分稳定在 9.0，调解场景被反复讨论。</p></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 10 相关推荐 -->
+    <section class="section" id="related">
+      <div class="sec-head">
+        <h2><span class="bar"></span>延伸方向</h2>
+        <p>与热门片单角度不同的内容索引</p>
+      </div>
+      <div class="tags-index">
+        <a href="/#featured"><b>港口悬疑</b> · 时间线叙事合集</a>
+        <a href="/#featured"><b>单一场景</b> · 对话驱动作品</a>
+        <a href="/#featured"><b>单元剧</b> · 夜班群像</a>
+        <a href="/#article"><b>倒序结构</b> · 五段录音式叙事</a>
+        <a href="/#timeline"><b>幕后制作</b> · 三机位调度图</a>
+        <a href="/#article"><b>民间怪谈</b> · 现代化改编</a>
+        <a href="/#featured"><b>双人对白</b> · 长镜头电影</a>
+        <a href="/#guide"><b>新人入门</b> · 三集试水路线</a>
+      </div>
+    </section>
+
+    <!-- 11 补充板块：制作时间线 -->
+    <section class="section" id="timeline">
+      <div class="sec-head">
+        <h2><span class="bar"></span>制作档案时间线</h2>
+        <p>近一个月内公开的幕后记录</p>
+      </div>
+      <div class="timeline">
+        <div class="tl"><time>2026-11-24</time><b>《雾港十二时》第 7—9 集剪辑说明</b><span>公开港口夜景素材的降噪参数与夜景白平衡方案。</span></div>
+        <div class="tl"><time>2026-11-22</time><b>《五十号房间》录音采集笔记</b><span>说明五段录音的采集设备、房间混响处理与倒序剪辑逻辑。</span></div>
+        <div class="tl"><time>2026-11-19</time><b>《第七审讯室》单场景布光方案</b><span>附三机位调度图，主光位随对话推进移动两次。</span></div>
+        <div class="tl"><time>2026-11-14</time><b>《凌晨三点的便利店》导演剪辑版差异对照</b><span>列出新增 4 分钟的具体镜头与对白调整。</span></div>
+        <div class="tl"><time>2026-11-08</time><b>《月亮地下的邮局》美术设定集</b><span>公开邮局内景的色彩分层与道具书信的书写规范。</span></div>
+        <div class="tl"><time>2026-11-03</time><b>午夜档低照度摄影通则（试行）</b><span>九条拍摄与后期标准，适用于全部自制项目。</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右侧辅助栏 -->
+  <aside class="side" aria-label="热榜与排期">
+    <div class="panel">
+      <h3>本周热度榜</h3>
+      <ul class="rank-list">
+        <li><span class="no">1</span><div class="t"><b>雾港十二时</b><small>更新至第 6 集 · 9.1 分</small></div></li>
+        <li><span class="no">2</span><div class="t"><b>第七审讯室</b><small>网络电影 · 8.9 分</small></div></li>
+        <li><span class="no">3</span><div class="t"><b>夜班派出所</b><small>全 6 集 · 9.0 分</small></div></li>
+        <li><span class="no">4</span><div class="t"><b>凌晨三点的便利店</b><small>导演剪辑版 · 8.7 分</small></div></li>
+        <li><span class="no">5</span><div class="t"><b>月亮地下的邮局</b><small>网络电影 · 8.8 分</small></div></li>
+        <li><span class="no">6</span><div class="t"><b>守夜人手册</b><small>更新至第 4 集 · 8.5 分</small></div></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>今夜排期</h3>
+      <ul class="sched">
+        <li><time>19:30</time><span>《雾港十二时》第 6 集</span></li>
+        <li><time>21:00</time><span>《守夜人手册》第 4 集重播</span></li>
+        <li><time>22:15</time><span>《第七审讯室》幕后花絮</span></li>
+        <li><time>23:40</time><span>《五十号房间》第 1—2 集连播</span></li>
+        <li><time>01:10</time><span>《月亮地下的邮局》番外</span></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>制作档案</h3>
+      <ul class="sched">
+        <li><time>11-24</time><span>雾港十二时剪辑说明</span></li>
+        <li><time>11-22</time><span>五十号房间录音笔记</span></li>
+        <li><time>11-19</time><span>第七审讯室布光方案</span></li>
+        <li><time>11-03</time><span>低照度摄影通则</span></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<!-- 页尾 -->
+<footer class="footer">
+  <div class="inner">
+    <div class="fbrand">
+      <a class="brand" href="/#top">
+        <span class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 5.2c0-.9 1-1.5 1.8-1l13 7.3c.8.4.8 1.6 0 2L5.8 20.8c-.8.5-1.8-.1-1.8-1V5.2Z" fill="#fff" opacity=".92"/><circle cx="9" cy="9.2" r="1.5" fill="#6d5cff"/><circle cx="9" cy="15" r="1.5" fill="#a855f7"/></svg>
+        </span>
+        <span class="name">午夜传媒有限公司<small>MIDNIGHT MEDIA</small></span>
+      </a>
+      <p>以午夜时段为创作坐标的影视厂牌，专注悬疑、都市情感、犯罪纪实改编与奇幻夜话四类内容，公开制作档案与播出排期。</p>
+    </div>
+    <div>
+      <h5>内容片单</h5>
+      <ul>
+        <li><a href="/#featured">午夜悬疑剧</a></li>
+        <li><a href="/#featured">都市情感短剧</a></li>
+        <li><a href="/#featured">犯罪纪实改编</a></li>
+        <li><a href="/#featured">网络电影</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>了解与查阅</h5>
+      <ul>
+        <li><a href="/#overview">领域概览</a></li>
+        <li><a href="/#article">类型解析</a></li>
+        <li><a href="/#guide">观看指南</a></li>
+        <li><a href="/#timeline">制作档案</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>动态与讨论</h5>
+      <ul>
+        <li><a href="/#updates">播出动态</a></li>
+        <li><a href="/#news">相关资讯</a></li>
+        <li><a href="/#comments">观众评论</a></li>
+        <li><a href="/#faq">常见问答</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bar">
+    <span>© 2026 午夜传媒有限公司 · 内容与评分均为站内示例数据</span>
+    <span>作品信息以实际播出为准 · 页面内容更新于 2026-11-25</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var menuBtn = document.getElementById('menuToggle');
+  var nav = document.getElementById('nav');
+  if(menuBtn && nav){
+    menuBtn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.innerWidth <= 1024){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#cardGrid .card'));
+  var empty = document.getElementById('emptyTip');
+  var q = document.getElementById('q');
+  var qbtn = document.getElementById('qbtn');
+  var currentCat = '';
+
+  function filterCards(){
+    var kw = (q && q.value ? q.value : '').trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function(card){
+      var tag = (card.getAttribute('data-tag') || '').toLowerCase();
+      var text = card.textContent.toLowerCase();
+      var matchKw = !kw || tag.indexOf(kw) > -1 || text.indexOf(kw) > -1;
+      var matchCat = !currentCat || tag.indexOf(currentCat.toLowerCase()) > -1;
+      var ok = matchKw && matchCat;
+      card.classList.toggle('hidden', !ok);
+      if(ok) shown++;
+    });
+    if(empty) empty.classList.toggle('show', shown === 0);
+  }
+
+  if(q){
+    q.addEventListener('input', filterCards);
+    q.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); filterCards(); } });
+  }
+  if(qbtn) qbtn.addEventListener('click', filterCards);
+
+  var cats = Array.prototype.slice.call(document.querySelectorAll('#catGrid .cat'));
+  cats.forEach(function(cat){
+    cat.addEventListener('click', function(){
+      var c = cat.getAttribute('data-cat');
+      if(c){
+        currentCat = (currentCat === c) ? '' : c;
+        if(q) q.value = '';
+        filterCards();
+        var target = document.getElementById('featured');
+        if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+      }
+    });
+  });
+})();
+</script>
+</body>
+                                                                                 </html>
